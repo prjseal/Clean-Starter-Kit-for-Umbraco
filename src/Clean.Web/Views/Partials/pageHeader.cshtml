@@ -1,0 +1,22 @@
+﻿@inherits UmbracoViewPage
+
+@{
+    var mainImage = Model.Value<IPublishedContent>("mainImage");
+}
+
+<header class="masthead" style="background-image: url('@(mainImage?.Url() ?? "/img/home-bg.jpg"))">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>@(Model.Value<string>("title") ?? Model.Name)</h1>
+                    @if (Model.HasValue("subtitle"))
+                    {
+                        <span class="subheading">@(Model.Value<string>("subtitle"))</span>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
