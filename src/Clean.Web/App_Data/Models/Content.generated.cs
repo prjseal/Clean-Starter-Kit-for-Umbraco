@@ -95,17 +95,17 @@ namespace Umbraco.Web.PublishedModels
 		public string MetaName => SEocontrols.GetMetaName(this);
 
 		///<summary>
-		/// Umbraco Navi Hide: Tick this box if you want to hide this page from the navigation and from search results
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
-		[ImplementPropertyType("Hide")]
-		public bool Hide => VisibilityControls.GetHide(this);
-
-		///<summary>
 		/// Hide From XML Sitemap: Tick this if you want to hide this page from the XML sitemap
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("hideFromXMLSitemap")]
 		public bool HideFromXmlsitemap => VisibilityControls.GetHideFromXmlsitemap(this);
+
+		///<summary>
+		/// Umbraco Navi Hide: Tick this box if you want to hide this page from the navigation and from search results
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide => VisibilityControls.GetUmbracoNaviHide(this);
 	}
 }

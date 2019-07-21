@@ -27,6 +27,10 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Article Date</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		DateTime ArticleDate { get; }
+
+		/// <summary>Author Name</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		string AuthorName { get; }
 	}
 
 	/// <summary>Article Controls</summary>
@@ -64,5 +68,16 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Static getter for Article Date</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		public static DateTime GetArticleDate(IArticleControls that) => that.Value<DateTime>("articleDate");
+
+		///<summary>
+		/// Author Name: Enter the name of the author
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("authorName")]
+		public string AuthorName => GetAuthorName(this);
+
+		/// <summary>Static getter for Author Name</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		public static string GetAuthorName(IArticleControls that) => that.Value<string>("authorName");
 	}
 }
