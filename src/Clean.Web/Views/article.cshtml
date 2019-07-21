@@ -1,4 +1,10 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Article>
+
+@using Clean.Web.ViewModels
+@using ContentModels = Umbraco.Web.PublishedModels
+
 @{
-	Layout = "master.cshtml";
+    Layout = "master.cshtml";
 }
+
+@Html.Partial("~/Views/Partials/pageHeader.cshtml", new PageHeaderViewModel(Model.Name, Model.Title, Model.Subtitle, Model.MainImage))

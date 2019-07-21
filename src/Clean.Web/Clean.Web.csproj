@@ -441,6 +441,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\PageHeaderViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="config\imageprocessor\security.config" />
@@ -484,6 +485,7 @@
     <Content Include="Views\Partials\footer.cshtml" />
     <Content Include="Views\Partials\metaData.cshtml" />
     <Content Include="Views\Partials\pageHeader.cshtml" />
+    <Content Include="Views\Partials\latestArticles.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
