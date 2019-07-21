@@ -9,11 +9,30 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="site-heading">
+                <div class="@(Model.ArticleDate.HasValue ? "post-heading" : "site-heading")">
                     <h1>@(!string.IsNullOrWhiteSpace(Model.Title) ? Model.Title : Model.Name)</h1>
-                    @if (Model.HasSubtitle)
+
+                    @if (Model.IsArticle)
                     {
-                        <span class="subheading">@(Model.Subtitle)</span>
+                        if (Model.HasSubtitle)
+                        {
+                            <h2 class="subheading">@Model.Subtitle</h2>
+                        }
+                        <span class="meta">
+                            Posted
+                            @if (Model.HasAuthor)
+                            {
+                                @Html.Raw("by ")@Model.AuthorName
+                            }
+                            on @Model.ArticleDate.Value.ToString("MMMM dd, yyyy")
+                        </span>
+                    }
+                    else
+                    {
+                        if (Model.HasSubtitle)
+                        {
+                            <span class="subheading">@(Model.Subtitle)</span>
+                        }
                     }
                 </div>
             </div>
