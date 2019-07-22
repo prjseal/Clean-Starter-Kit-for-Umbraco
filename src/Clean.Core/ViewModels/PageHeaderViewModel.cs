@@ -1,7 +1,7 @@
 ﻿using System;
 using Umbraco.Core.Models.PublishedContent;
 
-namespace Clean.Web.ViewModels
+namespace Clean.Core.ViewModels
 {
     public class PageHeaderViewModel
     {

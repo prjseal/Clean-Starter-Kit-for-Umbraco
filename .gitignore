@@ -9,3 +9,5 @@
 /src/Clean.Web/obj/Debug
 /src/Clean.Web/Umbraco
 /src/packages
+/src/Clean.Core/bin/Debug
+/src/Clean.Core/obj/Debug
