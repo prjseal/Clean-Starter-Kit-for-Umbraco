@@ -20,9 +20,9 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedModels
 {
-	/// <summary>John Smith</summary>
+	/// <summary>Error</summary>
 	[PublishedModel("error")]
-	public partial class Error : PublishedContentModel, IVisibilityControls
+	public partial class Error : PublishedContentModel, IContentControls, IHeaderControls, IMainImageControls, ISEocontrols, IVisibilityControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -44,6 +44,55 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Main Content: Enter the main content for the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("mainContent")]
+		public Newtonsoft.Json.Linq.JToken MainContent => ContentControls.GetMainContent(this);
+
+		///<summary>
+		/// Subtitle: Enter a subtitle for this page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle => HeaderControls.GetSubtitle(this);
+
+		///<summary>
+		/// Title: Enter the title for the page. If this is empty the name of the page will be used.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("title")]
+		public string Title => HeaderControls.GetTitle(this);
+
+		///<summary>
+		/// Main Image: Choose the main image for this page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("mainImage")]
+		public IPublishedContent MainImage => MainImageControls.GetMainImage(this);
+
+		///<summary>
+		/// Meta Description: Enter the meta description for this page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("metaDescription")]
+		public string MetaDescription => SEocontrols.GetMetaDescription(this);
+
+		///<summary>
+		/// Meta Keywords: Enter the keywords for this page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("metaKeywords")]
+		public IEnumerable<string> MetaKeywords => SEocontrols.GetMetaKeywords(this);
+
+		///<summary>
+		/// Meta Name: Enter the meta name for this page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("metaName")]
+		public string MetaName => SEocontrols.GetMetaName(this);
 
 		///<summary>
 		/// Hide From XML Sitemap: Tick this if you want to hide this page from the XML sitemap

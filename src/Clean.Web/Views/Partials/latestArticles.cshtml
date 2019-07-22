@@ -21,19 +21,19 @@
                         }
                     </a>
                     <p class="post-meta">
-                        Posted
+                        @Umbraco.GetDictionaryValue("Article.Posted")
                         @if (!string.IsNullOrWhiteSpace(article.AuthorName))
                         {
-                            @Html.Raw("by ")@article.AuthorName
+                            @Umbraco.GetDictionaryValue("Article.By")@Html.Raw("&nbsp;")@article.AuthorName
                         }
-                        on @article.ArticleDate.ToString("MMMM dd, yyyy")
+                        @Umbraco.GetDictionaryValue("Article.On") @article.ArticleDate.ToString("MMMM dd, yyyy")
                     </p>
                 </div>
                 <hr>
             }
             <!-- Pager -->
             <div class="clearfix">
-                <a class="btn btn-primary float-right" href="@articleList.Url">View all posts</a>
+                <a class="btn btn-primary float-right" href="@articleList.Url">@Umbraco.GetDictionaryValue("ArticleList.ViewAll")</a>
             </div>
         </div>
     </div>
