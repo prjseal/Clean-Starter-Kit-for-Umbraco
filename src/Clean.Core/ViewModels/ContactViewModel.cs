@@ -4,7 +4,7 @@ namespace Clean.Core.ViewModels
 {
     public class ContactViewModel
     {
-        [Required(ErrorMessage = "Please enter your name")]
+        [Required(ErrorMessage = "Please enter your name" )]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Please enter your email address")]
