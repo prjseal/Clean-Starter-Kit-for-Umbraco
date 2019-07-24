@@ -39,3 +39,13 @@
   }
 
 })(jQuery); // End of use strict
+
+
+// If your images are showing as full size in the grid and not responsive, you can
+// uncomment this code to get it to adde the 'img-fluid class'. It's not pretty though
+//
+//$(document).ready(function() {
+//    $('div.umb-grid div.row img').each(function() {
+//        $(this).addClass('img-fluid');
+//    });
+//});

@@ -11,3 +11,4 @@
 /src/packages
 /src/Clean.Core/bin/Debug
 /src/Clean.Core/obj/Debug
+/src/Clean.Web/App_Data/cache
