@@ -1,6 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.PublishedModels.Content>
 
 @using Clean.Core.ViewModels
+@using Clean.Core.Extensions
 
 @{
     Layout = "master.cshtml";
@@ -9,9 +10,5 @@
 @Html.Partial("~/Views/Partials/pageHeader.cshtml", new PageHeaderViewModel(Model.Name, Model.Title, Model.Subtitle, Model.MainImage))
 
 <article>
-    @*  This adds the img-fluid class to images in the grid. You don't have to do this 
-        if you don't want to, you can use the line below it instead. There is a javascript 
-        solution for it, commented out in /scripts/clean-blog.js *@
-    @Html.Raw(Html.GetGridHtml(Model, "mainContent", "Clean").ToString().Replace("<img ", "<img class=\"img-fluid\" "))
-    @*@Html.GetGridHtml(Model, "mainContent", "Clean")*@
+    @Html.GetGridHtml(Model, "mainContent", "Clean", fluidImages: true)
 </article>

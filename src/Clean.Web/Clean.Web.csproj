@@ -431,6 +431,7 @@
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\clean-blog.js" />
     <Content Include="scripts\clean-blog.min.js" />
+    <Content Include="scripts\contactForm.js" />
     <Content Include="scripts\contact_me.js" />
     <Content Include="scripts\jqBootstrapValidation.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -493,8 +494,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Partials\Contact\contactForm.cshtml" />
-    <Content Include="Views\Partials\Contact\error.cshtml" />
-    <Content Include="Views\Partials\Contact\success.cshtml" />
+    <Content Include="Views\Partials\Contact\result.cshtml" />
     <Content Include="Views\Partials\Grid\Clean.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -1,6 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Contact>
 
 @using ClientDependency.Core.Mvc
+@using Clean.Core.Extensions
 
 @{
     Layout = "Master.cshtml";
@@ -27,13 +28,13 @@
 
 @Html.Partial("~/Views/Partials/pageHeader.cshtml", new PageHeaderViewModel(Model.Name, Model.Title, Model.Subtitle, Model.MainImage))
 
+<article id="article-content">
+    @Html.GetGridHtml(Model, "mainContent", "Clean", fluidImages: true)
+</article>
+
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
-            <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
-            <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
-            <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
             @{ Html.RenderAction("RenderForm", "Contact"); }
         </div>
     </div>

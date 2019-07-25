@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedModels
 {
 	/// <summary>Contact</summary>
 	[PublishedModel("contact")]
-	public partial class Contact : PublishedContentModel, IContentControls, IHeaderControls, IMainImageControls, ISEocontrols, IVisibilityControls
+	public partial class Contact : PublishedContentModel, IContactFormControls, IContentControls, IHeaderControls, IMainImageControls, ISEocontrols, IVisibilityControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -44,6 +44,20 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Error Message: Enter the message to show on error
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("errorMessage")]
+		public IHtmlString ErrorMessage => ContactFormControls.GetErrorMessage(this);
+
+		///<summary>
+		/// Success Message: Enter the message to show on success
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("successMessage")]
+		public IHtmlString SuccessMessage => ContactFormControls.GetSuccessMessage(this);
 
 		///<summary>
 		/// Main Content: Enter the main content for the page

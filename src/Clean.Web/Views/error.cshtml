@@ -1,4 +1,14 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Error>
+
+@using Clean.Core.ViewModels
+@using Clean.Core.Extensions
+
 @{
-	Layout = "master.cshtml";
+    Layout = "master.cshtml";
 }
+
+@Html.Partial("~/Views/Partials/pageHeader.cshtml", new PageHeaderViewModel(Model.Name, Model.Title, Model.Subtitle, Model.MainImage))
+
+<article>
+    @Html.GetGridHtml(Model, "mainContent", "Clean", fluidImages: true)
+</article>

@@ -1,8 +1,13 @@
-﻿using Clean.Core.ViewModels;
+﻿using System.Linq;
+using Clean.Core.ViewModels;
 using System.Net.Mail;
 using System.Reflection;
+using System.Web;
 using System.Web.Mvc;
+using Umbraco.Core.Models.PublishedContent;
+using Umbraco.Web;
 using Umbraco.Web.Mvc;
+using Umbraco.Web.PublishedModels;
 
 namespace Clean.Core.SurfaceControllers
 {
@@ -11,7 +16,7 @@ namespace Clean.Core.SurfaceControllers
         [HttpGet]
         public ActionResult RenderForm()
         {
-            ContactViewModel model = new ContactViewModel();
+            var model = new ContactViewModel();
             return PartialView("/Views/Partials/Contact/contactForm.cshtml", model);
         }
 
@@ -29,7 +34,10 @@ namespace Clean.Core.SurfaceControllers
             {
                 success = SendEmail(model);
             }
-            return PartialView($"/Views/Partials/Contact/{(success ? "success" : "error")}.cshtml");
+
+            var contactPage = (Contact)Umbraco.ContentAtXPath("//contact").FirstOrDefault();
+
+            return PartialView("/Views/Partials/Contact/result.cshtml", success ? contactPage.SuccessMessage : contactPage.ErrorMessage);
         }
 
         public bool SendEmail(ContactViewModel model)
