@@ -15,10 +15,9 @@
         $("#form-result").show('slow');
         $("pre").each(function () {
             $(this).addClass("prettyprint");
-        }).then(function () {
+        }).promise(function () {
             PR.prettyPrint();
         });
-
     }
 };
 

@@ -1,14 +1,25 @@
 ﻿@inherits UmbracoViewPage
 
+@using Clean.Core.Helpers
+
 @{
-    var articleList = Umbraco.ContentAtXPath("root/home/articleList").FirstOrDefault();
-    var articles = articleList.Children.Where(x => x.IsVisible()).Cast<Article>();
+    var articleList = UmbracoContext.Content.GetAtRoot().DescendantsOrSelf<ArticleList>().FirstOrDefault();
+    var isArticleListPage = Model.Id == articleList.Id;
+    var fallbackPageSize = isArticleListPage ? 10 : 3;
+
+    var pageSize = QueryStringHelper.GetIntFromQueryString(Request, "size", fallbackPageSize);
+    var pageNumber = QueryStringHelper.GetIntFromQueryString(Request, "page", 1);
+    var allArticles = articleList.Children<Article>().Where(x => x.IsVisible()).OrderByDescending(x => x.ArticleDate);
+    var pageOfArticles = allArticles.Skip((pageNumber - 1) * pageSize).Take(pageSize);
+    var totalItemCount = allArticles.Count();
+    var pageCount = totalItemCount > 0 ? Math.Ceiling((double)totalItemCount / pageSize) : 1;
+
 }
 
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            @foreach (var article in articles)
+            @foreach (var article in pageOfArticles)
             {
                 <div class="post-preview">
                     <a href="@article.Url">
@@ -33,7 +44,21 @@
             }
             <!-- Pager -->
             <div class="clearfix">
-                <a class="btn btn-primary float-right" href="@articleList.Url">@Umbraco.GetDictionaryValue("ArticleList.ViewAll")</a>
+                @if (isArticleListPage)
+                {
+                    if (pageNumber > 1)
+                    {
+                        <a class="btn btn-primary float-left" href="@($"{articleList.Url}?page={pageNumber - 1}&size={pageSize}")">Prev</a>
+                    }
+                    if (pageNumber < pageCount)
+                    {
+                        <a class="btn btn-primary float-right" href="@($"{articleList.Url}?page={pageNumber + 1}&size={pageSize}")">Next</a>
+                    }
+                }
+                else
+                {
+                    <a class="btn btn-primary float-right" href="@(articleList.Url)">@Umbraco.GetDictionaryValue("ArticleList.ViewAll")</a>
+                }
             </div>
         </div>
     </div>

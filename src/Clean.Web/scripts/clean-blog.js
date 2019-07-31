@@ -40,9 +40,9 @@
 
 })(jQuery); // End of use strict
 
-
+//add some formatting to the code blocks
 $("pre").each(function () {
     $(this).addClass("prettyprint");
-}).then(function () {
+}).promise(function () {
     PR.prettyPrint();
 });
