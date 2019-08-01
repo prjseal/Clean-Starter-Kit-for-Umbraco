@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedModels
 {
 	/// <summary>Home</summary>
 	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, IContentControls, IHeaderControls, IMainImageControls, ISEocontrols
+	public partial class Home : PublishedContentModel, IContentControls, IFooterControls, IHeaderControls, IMainImageControls, ISEocontrols
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -51,6 +51,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("mainContent")]
 		public Newtonsoft.Json.Linq.JToken MainContent => ContentControls.GetMainContent(this);
+
+		///<summary>
+		/// Social Links: Enter the social links for the footer
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("socialLinks")]
+		public IEnumerable<IconLinkItem> SocialLinks => FooterControls.GetSocialLinks(this);
 
 		///<summary>
 		/// Subtitle: Enter a subtitle for this page

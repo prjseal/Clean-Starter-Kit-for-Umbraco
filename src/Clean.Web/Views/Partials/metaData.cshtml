@@ -1,7 +1,7 @@
 ﻿@model IPublishedContent
 
 @{
-    var homePage = Model.AncestorOrSelf("home");
+    var homePage = Model.AncestorOrSelf<Home>();
     string domainAddress = homePage.Url(mode:UrlMode.Absolute);
     string canonicalLink = domainAddress + Model.Url;
     string metaName = Model.Value<string>("metaName");

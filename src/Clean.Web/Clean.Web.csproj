@@ -425,6 +425,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="css\clean-blog.css" />
     <Content Include="css\clean-blog.min.css" />
+    <Content Include="css\dropdownStyles.css" />
     <Content Include="css\prettify.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
