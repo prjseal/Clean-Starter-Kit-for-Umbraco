@@ -426,3 +426,14 @@ span.field-validation-error {
 button.search-button { 
     float: right;
 }
+
+div.container div.row #paging div.paging-block {
+    width: 33%;
+    display: block;
+    float: left;
+}
+
+div.container div.row #paging div.paging-block span {
+    display: block;
+    padding-top: 12px;
+}

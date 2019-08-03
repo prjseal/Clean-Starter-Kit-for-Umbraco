@@ -235,6 +235,7 @@
   <ItemGroup>
     <Compile Include="Extensions\HtmlExtensions.cs" />
     <Compile Include="Helpers\QueryStringHelper.cs" />
+    <Compile Include="PackageActions\InstallPackageAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SurfaceControllers\ContactSurfaceController.cs" />
     <Compile Include="ViewModels\ContactViewModel.cs" />

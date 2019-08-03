@@ -43,23 +43,42 @@
                 <hr>
             }
             <!-- Pager -->
-            <div class="clearfix">
-                @if (isArticleListPage)
-                {
-                    if (pageNumber > 1)
+                <div id="paging" class="clearfix">
+                    @if (isArticleListPage)
                     {
-                        <a class="btn btn-primary float-left" href="@($"{articleList.Url}?page={pageNumber - 1}&size={pageSize}")">Prev</a>
+                        if (pageCount > 1)
+                        {
+                            <div class="paging-block">
+                                @if (pageNumber > 1)
+                                {
+                                    <a class="btn btn-primary float-left" href="@($"{articleList.Url}?page={pageNumber - 1}&size={pageSize}")">Prev</a>
+                                }
+                                else
+                                {
+                                    @Html.Raw("&nbsp;")
+                                }
+                            </div>
+                            <div class="paging-block text-center">
+                                <span >Page @pageNumber of @pageCount</span>
+                            </div>
+                            <div class="paging-block">
+                                @if (pageNumber < pageCount)
+                                {
+                                    <a class="btn btn-primary float-right" href="@($"{articleList.Url}?page={pageNumber + 1}&size={pageSize}")">Next</a>
+                                }
+                                else
+                                {
+                                    @Html.Raw("&nbsp;")
+                                }
+                            </div>
+
+                        }
                     }
-                    if (pageNumber < pageCount)
+                    else
                     {
-                        <a class="btn btn-primary float-right" href="@($"{articleList.Url}?page={pageNumber + 1}&size={pageSize}")">Next</a>
+                        <a class="btn btn-primary float-right" href="@(articleList.Url)">@Umbraco.GetDictionaryValue("ArticleList.ViewAll")</a>
                     }
-                }
-                else
-                {
-                    <a class="btn btn-primary float-right" href="@(articleList.Url)">@Umbraco.GetDictionaryValue("ArticleList.ViewAll")</a>
-                }
-            </div>
+                </div>
         </div>
     </div>
 </div>
