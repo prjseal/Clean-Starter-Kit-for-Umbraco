@@ -51,7 +51,7 @@
                             <div class="paging-block">
                                 @if (pageNumber > 1)
                                 {
-                                    <a class="btn btn-primary float-left" href="@($"{articleList.Url}?page={pageNumber - 1}&size={pageSize}")">Prev</a>
+                                <a class="btn btn-primary float-left" href="@($"{articleList.Url}?page={pageNumber - 1}&size={pageSize}")">@Umbraco.GetDictionaryValue("Paging.Previous")</a>
                                 }
                                 else
                                 {
@@ -59,12 +59,12 @@
                                 }
                             </div>
                             <div class="paging-block text-center">
-                                <span >Page @pageNumber of @pageCount</span>
+                                <span>@Umbraco.GetDictionaryValue("Paging.Page") @pageNumber @Umbraco.GetDictionaryValue("Paging.Of") @pageCount</span>
                             </div>
                             <div class="paging-block">
                                 @if (pageNumber < pageCount)
                                 {
-                                    <a class="btn btn-primary float-right" href="@($"{articleList.Url}?page={pageNumber + 1}&size={pageSize}")">Next</a>
+                                <a class="btn btn-primary float-right" href="@($"{articleList.Url}?page={pageNumber + 1}&size={pageSize}")">@Umbraco.GetDictionaryValue("Paging.Next")</a>
                                 }
                                 else
                                 {

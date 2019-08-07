@@ -35,9 +35,12 @@ namespace Clean.Core.SurfaceControllers
                 success = SendEmail(model);
             }
 
-            var contactPage = (Contact)Umbraco.ContentAtXPath("//contact").FirstOrDefault();
+            var contactPage = Umbraco.ContentAtXPath("//contact").FirstOrDefault();
 
-            return PartialView("/Views/Partials/Contact/result.cshtml", success ? contactPage.SuccessMessage : contactPage.ErrorMessage);
+            var successMessage = contactPage.Value<IHtmlString>("successMessage");
+            var errorMessage = contactPage.Value<IHtmlString>("errorMessage");
+
+            return PartialView("/Views/Partials/Contact/result.cshtml", success ? successMessage : errorMessage);
         }
 
         public bool SendEmail(ContactViewModel model)

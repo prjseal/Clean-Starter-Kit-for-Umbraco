@@ -14,12 +14,12 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="form-group controls">
-                    <input type="text" class="form-control col-xs-6" placeholder="Search..." name="q" value="@searchQuery"/>
+                    <input type="text" class="form-control col-xs-6" placeholder="@Umbraco.GetDictionaryValue("Search.Placeholder")" name="q" value="@searchQuery"/>
                 </div>
             </div>
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="form-group">
-                    <button class="btn btn-primary search-button">Search <i class="fa fa-search"></i></button>
+                    <button class="btn btn-primary search-button">@Umbraco.GetDictionaryValue("Search.SearchButton") <i class="fa fa-search"></i></button>
                 </div>
             </div>
             <div class="col-lg-8 col-md-10 mx-auto">
@@ -27,7 +27,7 @@
                 {
                     var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty);
                     long resultCount = results != null && results.Any() ? results.Count() : 0;
-                    <p>We found <strong>@resultCount</strong> result@(resultCount != 1 ? "s" : "") when searching for <strong>@searchQuery</strong></p>
+                    @Html.Raw(string.Format(Umbraco.GetDictionaryValue("Search.Results"), resultCount, searchQuery))
                     if (resultCount > 0)
                     {
                         foreach (var result in results)

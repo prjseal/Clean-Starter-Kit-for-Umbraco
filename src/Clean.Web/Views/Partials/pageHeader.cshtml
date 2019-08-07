@@ -22,9 +22,9 @@
                             Posted
                             @if (Model.HasAuthor)
                             {
-                                @Html.Raw("by ")@Model.AuthorName
+                                @Umbraco.GetDictionaryValue("Article.By") @Model.AuthorName
                             }
-                            on @Model.ArticleDate.Value.ToString("MMMM dd, yyyy")
+                            @Umbraco.GetDictionaryValue("Article.On") @Model.ArticleDate.Value.ToString("MMMM dd, yyyy")
                         </span>
                     }
                     else

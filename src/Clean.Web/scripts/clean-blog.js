@@ -43,6 +43,9 @@
 //add some formatting to the code blocks
 $("pre").each(function () {
     $(this).addClass("prettyprint");
-}).promise(function () {
     PR.prettyPrint();
+});
+
+$('p iframe').each(function() {
+    $(this).parent().addClass('aspect-ratio');
 });

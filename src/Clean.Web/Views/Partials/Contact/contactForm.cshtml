@@ -16,7 +16,7 @@
 
         <div class="control-group">
             <div class="form-group floating-label-form-group controls">
-                <label>Name</label>
+                <label>@Umbraco.GetDictionaryValue("ContactForm.Name")</label>
                 @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Name" })
                 @Html.ValidationMessageFor(m => m.Name)
 
@@ -25,7 +25,7 @@
         </div>
         <div class="control-group">
             <div class="form-group floating-label-form-group controls">
-                <label>Email Address</label>
+                <label>@Umbraco.GetDictionaryValue("ContactForm.Email")</label>
                 @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
                 @Html.ValidationMessageFor(m => m.Email)
                 <p class="help-block text-danger"></p>
@@ -33,7 +33,7 @@
         </div>
         <div class="control-group">
             <div class="form-group floating-label-form-group controls">
-                <label>Message</label>
+                <label>@Umbraco.GetDictionaryValue("ContactForm.Message")</label>
                 @Html.TextAreaFor(m => m.Message, new { @class = "form-control", placeholder = "Message", rows = "6" })
                 @Html.ValidationMessageFor(m => m.Message)
                 <p class="help-block text-danger"></p>
@@ -41,7 +41,7 @@
         </div>
         <br>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+            <button type="submit" class="btn btn-primary" id="sendMessageButton">@Umbraco.GetDictionaryValue("ContactForm.Send")</button>
         </div>
     }
 </div>
