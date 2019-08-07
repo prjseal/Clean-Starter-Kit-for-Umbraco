@@ -1,6 +1,6 @@
-# Clean Starter Kit for Umbraco
+# Clean Starter Kit for Umbraco v8
 
-The Clean Starter Kit for Umbraco uses the Start Bootstrap Theme Clean Blog. It has been implemented in Umbraco as a Starter Kit by Paul Seal who has the blog codeshare.co.uk and works for the Umbraco Gold Partner Moriyama.
+The Clean Starter Kit for Umbraco uses the Start Bootstrap Theme Clean Blog. It has been implemented in Umbraco v8 as a Starter Kit by Paul Seal who has the blog codeshare.co.uk and works for the Umbraco Gold Partner Moriyama.
 
 The idea of this starter kit is to provide you with a clean and simple website. It is ideally aimed at people who are new to Umbraco so they can install the starter kit, get used to Umbraco and then build upon the kit with their own requirements.
 
