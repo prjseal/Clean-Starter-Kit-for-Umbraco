@@ -54,8 +54,7 @@
 
                                         @if (result.Content.HasProperty("articleDate") && result.Content.HasValue("articleDate") && result.Content.Value<DateTime>("articleDate") > DateTime.MinValue)
                                         {
-                                            @Umbraco.GetDictionaryValue("Article.On")
-                                            @(result.Content.Value<DateTime>("ArticleDate").ToString("MMMM dd, yyyy"))
+                                            @Umbraco.GetDictionaryValue("Article.On")@:&nbsp;@(result.Content.Value<DateTime>("ArticleDate").ToString("MMMM dd, yyyy"))
                                         }
                                     </p>
                                 }
