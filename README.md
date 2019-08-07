@@ -9,3 +9,5 @@ With this starter kit you should be able to quickly and easily set up a new webs
 See the demo site [here](https://clean.codeshare.co.uk)
 
 Go to the pacakge page on Our Umbraco [here](https://our.umbraco.com/packages/starter-kits/clean-starter-kit/)
+
+![https://github.com/prjseal/Clean-Starter-Kit-for-Umbraco/blob/master/images/1%20home.png?raw=true](https://github.com/prjseal/Clean-Starter-Kit-for-Umbraco/blob/master/images/1%20home.png?raw=true)
