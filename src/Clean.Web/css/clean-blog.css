@@ -460,3 +460,15 @@ h2 {
 img.img-fluid {
     height: auto !important;
 }
+
+h2 a:after {
+    content: '\f0c1';
+    font-family: 'Font Awesome 5 Free';
+    margin-left: 5px;
+    color: #0085A1;
+    font-size: 0.8em;
+}
+
+h2 a:after:hover {
+    text-decoration: none;
+}

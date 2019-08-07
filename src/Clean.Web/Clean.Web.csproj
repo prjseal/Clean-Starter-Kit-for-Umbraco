@@ -465,6 +465,7 @@
     <Content Include="Media\created-packages\Clean_Starter_Kit_0.9.96.zip" />
     <Content Include="Media\created-packages\Clean_Starter_Kit_0.9.97.zip" />
     <Content Include="Media\created-packages\Clean_Starter_Kit_0.9.98.zip" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />

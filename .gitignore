@@ -12,3 +12,7 @@
 /src/Clean.Core/bin/Debug
 /src/Clean.Core/obj/Debug
 /src/Clean.Web/App_Data/cache
+/src/Clean.Core/bin/Release
+/src/Clean.Core/obj/Release
+/src/Clean.Web/obj/Release
+*.user
