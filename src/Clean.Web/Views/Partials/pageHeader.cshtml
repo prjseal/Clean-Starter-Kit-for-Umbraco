@@ -18,14 +18,14 @@
                         {
                             <h2 class="subheading">@Model.Subtitle</h2>
                         }
-                            <span class="meta">
-                                Posted
-                                @if (Model.HasAuthor)
-                                {
-                                    @Umbraco.GetDictionaryValue("Article.By")@:&nbsp;@Model.AuthorName
-                                }
-                                @Umbraco.GetDictionaryValue("Article.On")@Html.Raw("&nbsp;")@Model.ArticleDate.Value.ToString("MMMM dd, yyyy")
-                            </span>
+                        <span class="meta">
+                            Posted
+                            @if (Model.HasAuthor)
+                            {
+                                @Umbraco.GetDictionaryValue("Article.By")@:&nbsp;@Model.AuthorName
+                            }
+                            @Umbraco.GetDictionaryValue("Article.On")@Html.Raw("&nbsp;")@Model.ArticleDate.Value.ToString("MMMM dd, yyyy")
+                        </span>
                     }
                     else
                     {
