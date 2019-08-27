@@ -9,7 +9,7 @@
 
     var pageSize = QueryStringHelper.GetIntFromQueryString(Request, "size", fallbackPageSize);
     var pageNumber = QueryStringHelper.GetIntFromQueryString(Request, "page", 1);
-    var allArticles = articleList.Children<Article>().Where(x => x.IsVisible()).OrderByDescending(x => x.ArticleDate);
+    var allArticles = articleList.Children<Article>().Where(x => x.IsVisible() && x.ArticleDate <= DateTime.Now).OrderByDescending(x => x.ArticleDate);
     var pageOfArticles = allArticles.Skip((pageNumber - 1) * pageSize).Take(pageSize);
     var totalItemCount = allArticles.Count();
     var pageCount = totalItemCount > 0 ? Math.Ceiling((double)totalItemCount / pageSize) : 1;
