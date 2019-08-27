@@ -2,9 +2,10 @@
 
 @using ClientDependency.Core.Mvc
 @using Clean.Core.Extensions
+@using Clean.Core.ViewModels
 
 @{
-    Layout = "Master.cshtml";
+    Layout = "master.cshtml";
     Html.EnableClientValidation();
     Html.EnableUnobtrusiveJavaScript();
     Html.RequiresJs("https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js");
@@ -13,17 +14,6 @@
     Html.RequiresJs("/scripts/jquery.validate.unobtrusive.min.js");
     Html.RequiresJs("/scripts/jquery.unobtrusive-ajax.min.js");
     Html.RequiresJs("/scripts/contactForm.js");
-}
-
-<div class="contact-clean">
-    
-</div>
-
-
-@using Clean.Core.ViewModels
-
-@{
-    Layout = "master.cshtml";
 }
 
 @Html.Partial("~/Views/Partials/pageHeader.cshtml", new PageHeaderViewModel(Model.Name, Model.Title, Model.Subtitle, Model.MainImage))
