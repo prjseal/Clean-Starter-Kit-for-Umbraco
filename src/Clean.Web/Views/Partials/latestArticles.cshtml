@@ -3,13 +3,17 @@
 @using Clean.Core.Helpers
 
 @{
+    var allArticles = Enumerable.Empty<Article>();
     var articleList = UmbracoContext.Content.GetAtRoot().DescendantsOrSelf<ArticleList>().FirstOrDefault();
-    var isArticleListPage = Model.Id == articleList.Id;
+    if (articleList != null)
+    {
+        allArticles = articleList.Children<Article>().Where(x => x.IsVisible()).OrderByDescending(x => x.ArticleDate);
+    }
+    var isArticleListPage = Model.Id == articleList?.Id;
     var fallbackPageSize = isArticleListPage ? 10 : 3;
 
     var pageSize = QueryStringHelper.GetIntFromQueryString(Request, "size", fallbackPageSize);
     var pageNumber = QueryStringHelper.GetIntFromQueryString(Request, "page", 1);
-    var allArticles = articleList.Children<Article>().Where(x => x.IsVisible()).OrderByDescending(x => x.ArticleDate);
     var pageOfArticles = allArticles.Skip((pageNumber - 1) * pageSize).Take(pageSize);
     var totalItemCount = allArticles.Count();
     var pageCount = totalItemCount > 0 ? Math.Ceiling((double)totalItemCount / pageSize) : 1;
@@ -74,7 +78,7 @@
 
                         }
                     }
-                    else
+                    else if (articleList != null)
                     {
                         <a class="btn btn-primary float-right" href="@(articleList.Url)">@Umbraco.GetDictionaryValue("ArticleList.ViewAll")</a>
                     }
